@@ -8,9 +8,6 @@ use App\Http\Controllers\API\CategoryProductController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\UserController;
 
-
-
-
 //ROUTE YANG DIGUNAKAN UNTUK MELAKUKAN CRUD DATA CUSTOMERS [ADMIN]
 Route::group(['middleware' => 'auth:api', 'prefix' => 'admin'], function () {
     Route::get('/customers', [CustomerController::class, 'index']);
@@ -48,8 +45,6 @@ Route::middleware('auth:api')->group(function () {
     Route::put('products/{id}', [ProductController::class, 'update']);
     Route::delete('products/{id}', [ProductController::class, 'destroy']);
 });
-
-
 
 //ROUTE YANG DIGUNAKAN UNTUK MELAKUKAN CRUD DATA USERS [ADMIN]
 Route::group(['middleware' => 'auth:api'], function () {
